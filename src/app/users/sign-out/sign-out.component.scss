@@ -1,0 +1,80 @@
+@import "~@angular/material/core/theming/palette";
+@import "~@angular/material/core/theming/theming";
+@import "../../../sass/mixins";
+
+:host {
+  .flex-container {
+    background-color: mat-color($mat-grey, 100);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 200px;
+      left: 0;
+      right: 0;
+      background-color: mat-color($mat-indigo, 500);
+      content: "";
+      box-shadow: 0 2px 4px 1px rgba(0,0,0,.14);
+      z-index: 0;
+    }
+
+    .logo-container, .card-container {
+      z-index: 1;
+    }
+
+    button.logo-container {
+      background: transparent;
+      padding: 0 16px;
+      box-sizing: border-box;
+      cursor: pointer;
+      user-select: none;
+      outline: 0;
+      border: none;
+      display: inline-block;
+      white-space: nowrap;
+      text-decoration: none;
+      vertical-align: baseline;
+
+      .logo {
+        height: 64px;
+        width: 64px;
+        margin: 48px auto;
+        background: url("http://placehold.it/64x64") contain;
+        @include retina {
+          background: url("http://placehold.it/128x128") 64px/64px;
+        }
+      }
+    }
+
+    .card-container {
+      md-card {
+        background-color: #fff;
+        margin-bottom: 16px;
+
+        md-card-title {
+          text-transform: uppercase;
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        md-card-content {
+          margin-bottom: 16px;
+
+          md-input-container {
+            margin-bottom: 16px;
+          }
+
+          button, a {
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+  }
+}

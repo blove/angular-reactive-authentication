@@ -1,0 +1,69 @@
+@import "~@angular/material/core/theming/palette";
+@import "~@angular/material/core/theming/theming";
+@import "../../../sass/mixins";
+
+:host {
+  .flex-container {
+    background-color: mat-color($mat-grey, 100);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 200px;
+      left: 0;
+      right: 0;
+      background-color: mat-color($mat-indigo, 500);
+      content: "";
+      box-shadow: 0 2px 4px 1px rgba(0,0,0,.14);
+      z-index: 0;
+    }
+
+    .card-container {
+      z-index: 1;
+
+      md-card {
+        margin-top: 88px;
+
+        md-card-title {
+          margin-top: -70px;
+          position: relative;
+
+          .avatar-wrapper {
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.14);
+            height: 140px;
+            width: 140px;
+
+            md-icon {
+              font-size: 100px;
+              height: 100px;
+              width: 100px;
+              color: mat-color($mat-deep-purple, 100);
+            }
+          }
+
+          .menu-button {
+            position: absolute;
+            top: 56px;
+            right: -12px;
+          }
+        }
+
+        md-card-content {
+          text-align: center;
+
+          md-slide-toggle {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
