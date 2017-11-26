@@ -8,12 +8,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 // @angular/material
 import {
-  MdButtonModule,
-  MdCardModule,
-  MdIconModule,
-  MdInputModule,
-  MdProgressSpinnerModule,
-  MdMenuModule
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatMenuModule
 } from "@angular/material";
 
 // components
@@ -38,12 +38,12 @@ const components = [
     CommonModule,
     FlexLayoutModule,
     FormsModule,
-    MdButtonModule,
-    MdCardModule,
-    MdIconModule,
-    MdInputModule,
-    MdProgressSpinnerModule,
-    MdMenuModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatMenuModule,
     ReactiveFormsModule,
     RouterModule,
     UsersRoutingModule

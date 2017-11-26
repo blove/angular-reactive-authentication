@@ -1,5 +1,5 @@
-@import "~@angular/material/core/theming/palette";
-@import "~@angular/material/core/theming/theming";
+@import "~@angular/material/theming";
+@import "~@angular/material/theming";
 @import "../../../sass/mixins";
 
 :host {
@@ -27,10 +27,10 @@
     .card-container {
       z-index: 1;
 
-      md-card {
+      mat-card {
         margin-top: 88px;
 
-        md-card-title {
+        mat-card-title {
           margin-top: -70px;
           position: relative;
 
@@ -41,7 +41,7 @@
             height: 140px;
             width: 140px;
 
-            md-icon {
+            mat-icon {
               font-size: 100px;
               height: 100px;
               width: 100px;
@@ -56,10 +56,10 @@
           }
         }
 
-        md-card-content {
+        mat-card-content {
           text-align: center;
 
-          md-slide-toggle {
+          mat-slide-toggle {
             margin: 0 auto;
           }
         }

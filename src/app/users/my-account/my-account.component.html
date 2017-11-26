@@ -1,24 +1,24 @@
 <div class="flex-container" fxLayout="column">
   <div fxLayout="row" fxLayoutAlign="center" class="card-container">
     <div fxFlex="90%" fxFlex.md="50%" fxFlex.lg="40%">
-      <md-card>
-        <md-card-title>
+      <mat-card>
+        <mat-card-title>
           <div fxLayout="row" fxLayoutAlign="center center">
             <div class="avatar-wrapper" fxLayoutAlign="center center">
-              <md-icon>person</md-icon>
+              <mat-icon>person</mat-icon>
             </div>
           </div>
-          <button md-icon-button [mdMenuTriggerFor]="menu" disableRipple="true" class="menu-button">
-            <md-icon>more_vert</md-icon>
+          <button mat-icon-button [matMenuTriggerFor]="menu" disableRipple="true" class="menu-button">
+            <mat-icon>more_vert</mat-icon>
           </button>
-          <md-menu #menu="mdMenu">
-            <button md-menu-item (click)="signOut()">Sign Out</button>
-          </md-menu>
-        </md-card-title>
-        <md-card-content>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="signOut()">Sign Out</button>
+          </mat-menu>
+        </mat-card-title>
+        <mat-card-content>
           <p>Hello, {{ (user | async).firstName }}</p>
-        </md-card-content>
-      </md-card>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>

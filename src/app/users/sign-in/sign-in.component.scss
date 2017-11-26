@@ -1,5 +1,5 @@
-@import "~@angular/material/core/theming/palette";
-@import "~@angular/material/core/theming/theming";
+@import "~@angular/material/theming";
+@import "~@angular/material/theming";
 @import "../../../sass/mixins";
 
 :host {
@@ -53,20 +53,20 @@
     }
 
     .card-container {
-      md-card {
+      mat-card {
         background-color: #fff;
         margin-bottom: 16px;
 
-        md-card-title {
+        mat-card-title {
           text-transform: uppercase;
           text-align: center;
           margin-bottom: 48px;
         }
 
-        md-card-content {
+        mat-card-content {
           margin-bottom: 16px;
 
-          md-input-container {
+          mat-form-field {
             margin-bottom: 16px;
           }
 

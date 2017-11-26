@@ -4,32 +4,32 @@
   </button>
   <div fxLayout="row" fxLayoutAlign="center" class="card-container">
     <div fxFlex="90%" fxFlex.md="50%" fxFlex.lg="40%">
-      <md-card>
-        <md-card-title>Sign Up</md-card-title>
-        <md-card-content>
+      <mat-card>
+        <mat-card-title>Sign Up</mat-card-title>
+        <mat-card-content>
           <div *ngIf="error | async" color="error">{{ error | async }}</div>
           <form *ngIf="!(loading | async)" (ngSubmit)="submit()" [formGroup]="signupForm" novalidate>
             <div fxLayout="column">
-              <md-input-container fxFlex="100%">
-                <input mdInput required placeholder="First Name" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="firstName">
-              </md-input-container>
-              <md-input-container fxFlex="100%">
-                <input mdInput required placeholder="Last Name" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="lastName">
-              </md-input-container>
-              <md-input-container fxFlex="100%">
-                <input mdInput required placeholder="Email Address" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="email">
-              </md-input-container>
-              <md-input-container fxFlex="100%">
-                <input mdInput required type="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="password">
-              </md-input-container>
-              <button md-raised-button [disabled]="signupForm.invalid" type="submit" color="accent">Sign Up</button>
+              <mat-form-field>
+                <input matInput required placeholder="First Name" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="firstName">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput required placeholder="Last Name" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="lastName">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput required placeholder="Email Address" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="email">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput required type="password" placeholder="Password" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="off" formControlName="password">
+              </mat-form-field>
+              <button mat-raised-button [disabled]="signupForm.invalid" type="submit" color="accent">Sign Up</button>
             </div>
           </form>
           <div fxLayout="row" fxLayoutAlign="center">
-            <md-spinner *ngIf="loading | async"></md-spinner>
+            <mat-spinner *ngIf="loading | async"></mat-spinner>
           </div>
-        </md-card-content>
-      </md-card>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>
