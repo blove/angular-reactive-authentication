@@ -6,15 +6,14 @@ import { Action } from "@ngrx/store";
 
 // import rxjs
 import { Observable } from "rxjs/Observable";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/catch";
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/switchMap";
 
 // import services
 import { UserService } from "../core/services/user.service";
-
-// import models
-import { User } from "../core/models/user";
 
 // import actions
 import {
@@ -60,8 +59,8 @@ export class UserEffects {
     .map(toPayload)
     .switchMap(payload => {
       return this.userService.authenticate(payload.email, payload.password)
-        .map(user => new AuthenticationSuccessAction({ user: user }))
-        .catch(error => Observable.of(new AuthenticationErrorAction({ error: error })));
+        .map(user => new AuthenticationSuccessAction({user: user}))
+        .catch(error => Observable.of(new AuthenticationErrorAction({error: error})));
     });
 
   @Effect()
@@ -70,8 +69,8 @@ export class UserEffects {
     .map(toPayload)
     .switchMap(payload => {
       return this.userService.authenticatedUser()
-        .map(user => new AuthenticatedSuccessAction({ authenticated: (user !== null), user: user }))
-        .catch(error => Observable.of(new AuthenticatedErrorAction({ error: error })));
+        .map(user => new AuthenticatedSuccessAction({authenticated: (user !== null), user: user}))
+        .catch(error => Observable.of(new AuthenticatedErrorAction({error: error})));
     });
 
   @Effect()
@@ -81,8 +80,8 @@ export class UserEffects {
     .map(toPayload)
     .switchMap(payload => {
       return this.userService.create(payload.user)
-        .map(user => new SignUpSuccessAction({ user: user }))
-        .catch(error => Observable.of(new SignUpErrorAction({ error: error })));
+        .map(user => new SignUpSuccessAction({user: user}))
+        .catch(error => Observable.of(new SignUpErrorAction({error: error})));
     });
 
   @Effect()
@@ -92,7 +91,7 @@ export class UserEffects {
     .switchMap(payload => {
       return this.userService.signout()
         .map(value => new SignOutSuccessAction())
-        .catch(error => Observable.of(new SignOutErrorAction({ error: error })));
+        .catch(error => Observable.of(new SignOutErrorAction({error: error})));
     });
 
   /**
@@ -100,8 +99,7 @@ export class UserEffects {
    * @param {Actions }actions
    * @param {UserService} userService
    */
-  constructor(
-    private actions: Actions,
-    private userService: UserService
-  ) { }
+  constructor(private actions: Actions,
+              private userService: UserService) {
+  }
 }
